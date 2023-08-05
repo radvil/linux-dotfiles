@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-[[ $DOTFILES_UTILS_LOADED != "true" ]] && source "$DOTFILES/utils.sh"
+[[ -z $DOTFILES ]] && DOTFILES="$HOME/.dotfiles"
+source "$DOTFILES/utils.sh"
 
 source_file "$DOTFILES/cli/starship/init.sh"
 source_file "$DOTFILES/cli/git/init.sh"
