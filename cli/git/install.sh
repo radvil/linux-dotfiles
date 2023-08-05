@@ -9,5 +9,4 @@ if confirmed "Install and configure \"Git Utilities\" ?"; then
 		mkdir "$config_path" -p
 	fi
 	setup_link "$DOTFILES/cli/git/lazygit-config.yml" "$config_path/config.yml"
-	source_file "$DOTFILES/cli/git/init.zsh"
 fi

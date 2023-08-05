@@ -20,5 +20,4 @@ if confirmed "Install and configure \"Oh My ZSH\" ?"; then
 
 		success "\"Oh My Zsh\" installed successfully!"
 	fi
-	source_file "$DOTFILES/cli/omz/init.zsh"
 fi

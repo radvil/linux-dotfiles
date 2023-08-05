@@ -9,4 +9,3 @@ alias grep="rg"
 alias so-bash="source ~/.bashrc"
 alias so-zsh="source ~/.zshenv"
 alias x="exit"
-

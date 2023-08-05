@@ -28,7 +28,4 @@ if confirmed "Install and configure \"node version manager\" ?"; then
 	else
 		log "\"Node Version Manager\" has already installed. Skipping..."
 	fi
-
-	# init after install
-	source_file "$DOTFILES/cli/nvm/init.zsh"
 fi

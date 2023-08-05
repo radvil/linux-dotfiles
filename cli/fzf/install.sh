@@ -4,5 +4,4 @@
 
 if confirmed "Install and configure fzf ?"; then
 	sudo pacman -S fzf --needed
-	source_file "$DOTFILES/cli/fzf/init.zsh"
 fi

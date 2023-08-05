@@ -21,4 +21,3 @@ tar
 trash-cli
 htop
 neofetch
-

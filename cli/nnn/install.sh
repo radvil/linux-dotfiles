@@ -5,5 +5,4 @@
 if confirmed "Install and configure \"nnn file manager\""; then
 	sudo pacman -S nnn --needed
 	source_file "$DOTFILES/nnn/deps.sh"
-	source_file "$DOTFILES/nnn/init.sh"
 fi

@@ -4,5 +4,4 @@
 
 if confirmed "Install and configure \"z.lua\" ?"; then
 	sudo pacman -S lua --needed
-	source_file "$DOTFILES/cli/z/init.zsh"
 fi
