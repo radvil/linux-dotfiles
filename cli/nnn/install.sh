@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-[[ $DOTFILES_UTILS_LOADED != "true" ]] && source "$DOTFILES/utils.sh"
+[[ -z $DOTFILES ]] && source "$HOME/.dotfiles/utils.sh"
 
 if confirmed "Install and configure \"nnn file manager\""; then
 	sudo pacman -S nnn --needed
-	source_file "$DOTFILES/nnn/deps.sh"
+	source_file "$DOTFILES/cli/nnn/deps.sh"
 fi

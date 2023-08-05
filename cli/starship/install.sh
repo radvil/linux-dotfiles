@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-[[ $DOTFILES_UTILS_LOADED != "true" ]] && source "$DOTFILES/utils.sh"
+[[ -z $DOTFILES ]] && source "$HOME/.dotfiles/utils.sh"
 
 if confirmed "Install and configure starship prompt ?"; then
 	sudo pacman -S starship --needed

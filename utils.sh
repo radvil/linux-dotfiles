@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
-# shellcheck disable=SC2046,2086,SC2181,1090
 
-export DOTFILES_UTILS_LOADED="true"
+[[ -z "$DOTFILES" ]] && export DOTFILES="$HOME/.dotfiles"
 
 log() {
-	printf "[\033[00;34m🚀LOG\033[0m] %s$1\n"
+	printf "\033[00;34minfo: » %s$1 \033[0m\n"
 }
 
 warn() {
-	printf "[\033[0;33m⚠ WARN\033[0m] %s$1\n"
+	printf "\033[0;33mwarning: » %s$1 \033[0m\n"
 }
 
 success() {
-	printf "\033[2K[\033[00;32m✔ SUCCESS\033[0m] %s$1\n"
+	printf "\033[2K\033[00;32m » %s$1 \033[0m\n"
 }
 
 confirmed() {

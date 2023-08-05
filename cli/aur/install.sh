@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-[[ $DOTFILES_UTILS_LOADED != "true" ]] && source "$DOTFILES/utils.sh"
+[[ -z $DOTFILES ]] && source "$HOME/.dotfiles/utils.sh"
 
 # Install AUR Helper
-if ! has_installed yay; then
-	if confirmed "Install \"AUR Utils\" ?"; then
+if confirmed "Install \"AUR Utils\" ?"; then
+	if ! has_installed yay; then
 		log "Installing \"yay\" as \"AUR Helper\" alternative"
 		DOWNLOAD_PATH="$HOME/Downloads/Programs"
 		mkdir "$DOWNLOAD_PATH" -p
@@ -14,10 +14,10 @@ if ! has_installed yay; then
 		popd || exit
 		rm -rf "$DOWNLOAD_PATH/yay"
 		success "\"yay\" installed successfully!"
+	else
+		log "\"yay\" has already installed. Skipping..."
 	fi
-else
-	log "\"yay\" has already installed. Skipping..."
 fi
 
-# toggle color options into pacman
+# enable color on pacman
 sudo sed -i 's/#Color/Color/g' /etc/pacman.conf

@@ -1,7 +1,7 @@
 #!/bin/env bash
 #shellcheck disable=2181
 
-[[ $DOTFILES_UTILS_LOADED != "true" ]] && source "$DOTFILES/utils.sh"
+[[ -z $DOTFILES ]] && source "$HOME/.dotfiles/utils.sh"
 
 git_purge_branch() {
 	branch="$1"

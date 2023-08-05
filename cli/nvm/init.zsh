@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-[[ $DOTFILES_UTILS_LOADED != "true" ]] && source "$DOTFILES/utils.sh"
+[[ -z $DOTFILES ]] && source "$HOME/.dotfiles/utils.sh"
 
 # should setup NVM before anything else
 source_file "$HOME/.nvm/nvm.sh" --silent

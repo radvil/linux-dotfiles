@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-[[ $DOTFILES_UTILS_LOADED != "true" ]] && source "$DOTFILES/utils.sh"
+[[ -z $DOTFILES ]] && source "$HOME/.dotfiles/utils.sh"
 
 # provide cutom values for fzf
 export FZF_TMUX=1

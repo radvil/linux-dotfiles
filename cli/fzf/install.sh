@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-[[ $DOTFILES_UTILS_LOADED != "true" ]] && source "$DOTFILES/utils.sh"
+[[ -z $DOTFILES ]] && source "$HOME/.dotfiles/utils.sh"
 
 if confirmed "Install and configure fzf ?"; then
 	sudo pacman -S fzf --needed

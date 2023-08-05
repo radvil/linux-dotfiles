@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-[[ $DOTFILES_UTILS_LOADED != "true" ]] && source "$DOTFILES/utils.sh"
+[[ -z $DOTFILES ]] && source "../utils.sh"
 
-if confirmed "Install and configure \"z.lua\" ?"; then
+if confirmed "Install \"z.lua\" as directory jumper ?"; then
 	sudo pacman -S lua --needed
 fi

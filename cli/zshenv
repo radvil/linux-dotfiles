@@ -1,7 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
-[[ -z $DOTFILES ]] && DOTFILES="$HOME/.dotfiles"
-source "$DOTFILES/utils.sh"
+[[ -z $DOTFILES ]] && source "$HOME/.dotfiles/utils.sh"
 
 source_file "$DOTFILES/cli/starship/init.zsh"
 source_file "$DOTFILES/cli/git/init.zsh"
@@ -13,4 +12,4 @@ source_file "$DOTFILES/cli/nvim/init.zsh"
 source_file "$DOTFILES/cli/z/init.zsh"
 
 # setup aliases
-source_file "$DOTFILES/alias.zsh"
+source_file "$DOTFILES/cli/alias.zsh"

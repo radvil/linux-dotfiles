@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-[[ $DOTFILES_UTILS_LOADED != "true" ]] && source "$DOTFILES/cli/utils.sh"
+[[ -z $DOTFILES ]] && source "$HOME/.dotfiles/utils.sh"
 
 set -e
 
@@ -13,8 +13,8 @@ if confirmed "Install and configure additional fonts (including Nerd+Emoji fonts
 	install_from_file "$deps_file"
 	success "Extra fonts installed successfully!"
 
-    [[ -d /etc/fonts ]] || sudo mkdir /etc/fonts -p
-    [[ -f /etc/fonts/local.conf ]] || sudo touch /etc/fonts/local.conf
+	[[ -d /etc/fonts ]] || sudo mkdir /etc/fonts -p
+	[[ -f /etc/fonts/local.conf ]] || sudo touch /etc/fonts/local.conf
 
 	echo '<?xml version="1.0"?>
   <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
@@ -52,9 +52,9 @@ if confirmed "Install and configure additional fonts (including Nerd+Emoji fonts
   ' | sudo tee -a /etc/fonts/local.conf >/dev/null
 
 	# reload font cache
-    if has_installed fc-cache; then
-	    fc-cache
-    fi
+	if has_installed fc-cache; then
+		fc-cache
+	fi
 
 	success "Noto Emoji Font installed successfully"
 	warn "It is recommended to restart applications that are currenly opened!"

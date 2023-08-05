@@ -1,17 +1,15 @@
 #!/usr/bin/env sh
 
-cd ..
-
-DOTFILES=$(pwd -P)
 USERNAME=$(whoami)
+DOTFILES="$HOME/.dotfiles"
+
+source "$HOME/.dotfiles/utils.sh"
 
 sudo chown -R "$USERNAME" "$DOTFILES"
 
 set -e
 
 printf "Initialize dotfiles at %s$DOTFILES...\n"
-
-\. "$DOTFILES/utils.sh"
 
 main() {
 	if confirmed "Upgrade all packages ?"; then
@@ -33,12 +31,12 @@ main() {
 	source_file "$DOTFILES/cli/z/install.sh"
 
 	# replace zsh environements with customs
-	setup_link "$DOTFILES/env.zsh" "$HOME/.zshenv"
+	setup_link "$DOTFILES/cli/zshenv" "$HOME/.zshenv"
 
 	# ensure reload zshenv
-    sudo chsh -s /bin/zsh
-    log "zsh has been set as the default shell"
-    zsh
+	sudo chsh -s /bin/zsh
+	log "zsh has been set as the default shell"
+	zsh
 }
 
 main

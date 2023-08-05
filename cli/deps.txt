@@ -1,3 +1,4 @@
+man
 base-devel
 wget
 git
