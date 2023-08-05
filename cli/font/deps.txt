@@ -1,0 +1,7 @@
+ttf-roboto
+ttf-roboto-mono
+ttf-roboto-mono-nerd
+ttf-ubuntu-font-family
+ttf-jetbrains-mono-nerd
+adobe-source-sans-pro-fonts
+noto-fonts-emoji

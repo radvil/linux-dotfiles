@@ -1,0 +1,18 @@
+return {
+  require("libs.editor.mini-indentscope"),
+  require("libs.editor.indent-blankline"),
+  require("libs.editor.nvim-ts-autotag"),
+  require("libs.editor.nvim-autopairs"),
+  require("libs.editor.mini-splitjoin"),
+  require("libs.editor.vim-illuminate"),
+  require("libs.editor.mini-surround"),
+  require("libs.editor.comment-nvim"),
+  require("libs.editor.trouble-nvim"),
+  require("libs.editor.flash-nvim"),
+  require("libs.editor.treesitter"),
+  require("libs.editor.legendary"),
+  require("libs.editor.nvim-ufo"),
+  require("libs.editor.nvim-cmp"),
+  require("libs.editor.luasnip"),
+  require("libs.editor.tabout"),
+}

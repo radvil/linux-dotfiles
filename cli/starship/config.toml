@@ -1,0 +1,122 @@
+format = """
+[░▒▓](#EC5F67)\
+$username\
+[](bg:#FF855A fg:#EC5F67)\
+$directory\
+[](fg:#FF855A bg:#ECBE7B)\
+$git_branch\
+$git_status\
+[](fg:#ECBE7B bg:#6DD390)\
+$c\
+$elixir\
+$elm\
+$golang\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+$rust\
+[](fg:#6DD390 bg:#06969A)\
+$docker_context\
+[](fg:#06969A bg:#33658A)\
+$time\
+[ ](fg:#33658A)\
+\n$character"""
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+style_user = "bg:#EC5F67 fg:#272727"
+style_root = "bg:#EC5F67 fg:#272727"
+format = '[ 󰄛 $user ]($style)'
+
+[directory]
+style = "bg:#FF855A fg:#272727"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "~/"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[c]
+symbol = " "
+style = "bg:#6DD390"
+format = '[[ $symbol ($version) ](bg:#6DD390)]($style)'
+
+[docker_context]
+symbol = " "
+style = "bg:#06969A"
+format = '[[ $symbol $context ](bg:#06969A)]($style) $path'
+
+[elixir]
+symbol = " "
+style = "bg:#6DD390"
+format = '[[ $symbol ($version) ](bg:#6DD390)]($style)'
+
+[elm]
+symbol = " "
+style = "bg:#6DD390"
+format = '[[ $symbol ($version) ](bg:#6DD390)]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:#ECBE7B"
+format = '[[ $symbol $branch ](bg:#ECBE7B fg:#272727)]($style)'
+
+[git_status]
+style = "bg:#ECBE7B"
+format = '[[($all_status$ahead_behind )](bg:#ECBE7B fg:#272727)]($style)'
+
+[golang]
+symbol = ""
+format = '[[ $symbol ($version) ](bg:#6DD390 fg:#272727)]($style)'
+
+[haskell]
+symbol = " "
+style = "bg:#6DD390"
+format = '[[ $symbol ($version) ](bg:#6DD390)]($style)'
+
+[java]
+symbol = " "
+style = "bg:#6DD390"
+format = '[[ $symbol ($version) ](bg:#6DD390)]($style)'
+
+[julia]
+symbol = " "
+style = "bg:#6DD390"
+format = '[[ $symbol ($version) ](bg:#6DD390)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#6DD390"
+format = '[[ $symbol ($version) ](bg:#6DD390 fg:#272727)]($style)'
+
+[nim]
+symbol = " "
+style = "bg:#6DD390"
+format = '[[ $symbol ($version) ](bg:#6DD390)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#6DD390"
+format = '[[ $symbol ($version) ](bg:#6DD390)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"                            # Hour:Minute Format
+format = '[[   $time ](bg:#33658A)]($style)'
