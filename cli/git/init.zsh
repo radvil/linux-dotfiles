@@ -21,14 +21,17 @@ git_sync_all() {
 	git pull --all
 }
 
-# # changing dir on lazygit exited
-# lazygit_with_cwd_switch() {
-# 	ensure_exec "lazygit"
-# 	cache_dir="$HOME/.cache/lazygit/cwd_newdir"
-# 	[ ! -d "$cache_dir" ] && mkdir --parents "$cache_dir"
-# 	lazygit "$@"
-# 	if [ -f "$cache_dir" ]; then
-# 		"cd $(cat "$cache_dir")" || exit
-# 		rm -f "$cache_dir >/dev/null"
-# 	fi
-# }
+# changing dir on lazygit exited
+lazygit_with_cwd_switch() {
+	ensure_exec "lazygit"
+	cache_dir="$HOME/.cache/lazygit/cwd_newdir"
+	[ ! -d "$cache_dir" ] && mkdir --parents "$cache_dir"
+	lazygit "$@"
+	if [ -f "$cache_dir" ]; then
+		"cd $(cat "$cache_dir")" || exit
+		rm -f "$cache_dir >/dev/null"
+	fi
+}
+
+alias lg="lazygit"
+alias lgs="lazygit_with_cwd_switch"
