@@ -1,20 +1,16 @@
 #!/usr/bin/env bash
 
-[[ -z $DOTFILES ]] && source "$HOME/.dotfiles/utils.sh"
+source "$HOME/.dotfiles/utils.sh"
 
 if confirmed "Install and configure \"Tmux\" ?"; then
 	sudo pacman -S tmux fzf git --needed
 	success "\"Tmux\" installed successfully!"
 
-	if [ ! -d "$HOME/.config/tmux" ]; then
-		mkdir "$HOME/.config/tmux" -p
-	fi
-
-	setup_link "$DOTFILES/cli/tmux/config.conf" "$HOME/.config/tmux/tmux.conf"
+	setup_link "$DOTFILES/cli/tmux/config.conf" "$HOME/.tmux.conf"
 	success "\"Tmux configuration\" linked successfully!"
 
 	if confirmed "Install additional tmux plugins ?"; then
-		plugins_dir="$HOME/.config/tmux/plugins"
+		plugins_dir="$HOME/.tmux/plugins"
 
 		if [ ! -d "$plugins_dir" ]; then
 			mkdir "$plugins_dir" -p

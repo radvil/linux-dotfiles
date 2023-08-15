@@ -21,4 +21,5 @@ zip
 tar
 trash-cli
 htop
+btop
 neofetch

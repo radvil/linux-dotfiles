@@ -5,8 +5,8 @@ opt.mapleader = " "
 opt.maplocalleader = [[\]]
 opt.name = "Nvim Mini"
 opt.username = os.getenv("USER")
-opt.transbg = not vim.g.neovide
-opt.colorscheme = vim.g.neovide and "tokyonight" or "monokai-pro"
+opt.transbg = false
+opt.colorscheme = "tokyonight"
 opt.colorvariant = opt.colorscheme == "tokyonight" and "moon" or "mocha"
 opt.darkmode = true
 opt.completion = true
@@ -29,7 +29,7 @@ opt.barbeque = true
 opt.animations = false
 opt.animate_window = false
 opt.animate_cursor = false
-opt.smooth_cursor = not vim.g.neovide
+opt.smooth_cursor = false
 ---@type "neo-tree" | "nvim-tree"
 opt.sidebar = "neo-tree"
 ---@type "dashboard-nvim" | "alpha-nvim"

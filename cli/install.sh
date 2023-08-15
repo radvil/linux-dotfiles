@@ -34,7 +34,7 @@ main() {
 	setup_link "$DOTFILES/cli/zshenv" "$HOME/.zshenv"
 
 	# ensure reload zshenv
-	sudo chsh -s /bin/zsh
+	sudo chsh -s $(which zsh)
 	log "zsh has been set as the default shell"
 	zsh
 }

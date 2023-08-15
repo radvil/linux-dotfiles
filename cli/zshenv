@@ -1,6 +1,4 @@
-#!/usr/bin/env zsh
-
-[[ -z $DOTFILES ]] && source "$HOME/.dotfiles/utils.sh"
+source "$HOME/.dotfiles/utils.sh"
 
 source_file "$DOTFILES/cli/starship/init.zsh"
 source_file "$DOTFILES/cli/git/init.zsh"
